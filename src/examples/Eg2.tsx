@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import useCycle from "../hooks/useCycle";
 import "./eg2.css";
+
 const Eg2 = () => {
   const textArr = ["like 💖", "share 📨", "comment ✍️", "save 💾"];
   const [cycle, setCycle] = useCycle(textArr);
@@ -10,6 +11,7 @@ const Eg2 = () => {
     }, 1500);
     return () => clearTimeout(t);
   });
+
   return (
     <div className="eg2">
       <div className="text">
