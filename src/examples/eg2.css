@@ -1,0 +1,36 @@
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+.eg2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 5rem;
+  color: #00ffa2;
+  text-align: center;
+  position: absolute;
+}
+.static {
+}
+.dynamic {
+  animation-name: fade;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+}

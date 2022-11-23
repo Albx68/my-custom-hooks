@@ -1,0 +1,84 @@
+@keyframes fadeup {
+  0% {
+    opacity: 0;
+    transform: translateY(20vmin);
+    height: 20vmin;
+  }
+  70% {
+    opacity: 0.5;
+    transform: translateY(-5vmin);
+    height: 41vmin;
+  }
+  90% {
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    height: 40vmin;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: translateY(10vmin) rotate(60deg);
+  }
+  70% {
+    transform: translateY(-5vmin) rotate(-30deg);
+  }
+  100% {
+    transform: translateY(0vmin) rotate(-10deg);
+  }
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.card {
+  animation-name: fadeup;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in;
+  /* animation-fill-mode: forwards; */
+  transform-origin: center center;
+  background-color: rgb(217, 255, 239);
+  border-radius: 10px;
+  height: 40vmin;
+  width: 35vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+.emote {
+  font-size: 10rem;
+  animation-name: rotate;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in;
+  transition: 250ms ease;
+  transform: rotate(-10deg);
+}
+.emote:hover {
+  transform: rotate(-20deg);
+  cursor: pointer;
+  font-size: 25rem;
+}
+.btn {
+  position: fixed;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: none;
+  top: 70%;
+  cursor: pointer;
+  background-color: rgb(35, 255, 145);
+  color: rgb(6, 39, 23);
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+.btn:active {
+  transform: scale(0.95);
+}
