@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const useCycle = (arr) => {
   const [cycle, setCycle] = useState(arr[0]);
