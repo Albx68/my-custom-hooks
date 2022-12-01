@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
        {/* <Eg1/> */}
-       {/* <Eg2/> */}
+       <Eg2/>
     
        {/* <TimerEg/> */}
     </div>

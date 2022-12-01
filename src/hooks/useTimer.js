@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
 
-const useTimer = (start, stop, speed) => {
+const useTimer = (start, stop, speed, propagation) => {
   const [timer, setTimer] = useState(start);
-  const [timerCompleted, setTimerCompleted] = useState(false);
+  const [x, setX] = useState(true);
   useEffect(() => {
-    const t = setInterval(() => {
-      if (timer > stop) {
-        console.log("greater");
-        setTimer(stop);
-      } else setTimer((p) => p + 45);
-    }, speed);
-    return () => clearInterval(t);
+    if (timer > stop) {
+      setTimer(() => stop);
+      setX(() => false);
+    }
   }, [timer]);
-
   const startTimer = () => {
-    if (timerCompleted) return;
+    if (x) {
+      const t = setInterval(() => {
+        if (timer > stop) {
+          console.log("greater");
+          setTimer(() => stop);
+          clearInterval(t);
+        } else setTimer((p) => p + propagation);
+        return () => clearInterval(t);
+      }, speed);
+    } else return;
   };
 
   return [timer, startTimer];

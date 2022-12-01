@@ -1,0 +1,14 @@
+@keyframes fadeup {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.timer {
+  animation-name: fadeup;
+  animation-duration: 40ms;
+  /* animation-timing-function: ease-in; */
+}
